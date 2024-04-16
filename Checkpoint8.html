@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>M4 - Checkpoint 8</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v.6.2/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <style>
+    body {
+    
+      font-family: "Montserrat Alternates", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #ffffff;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+   
+    
+    body>.h2{
+      color:#449497;
+      text-decoration: underline;
+    }
+    .header-container{
+      display:grid;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-container>.logo img i{
+      display: grid;
+      flex-direction:row;
+      width: 80px;
+      height: 55px;
+      margin: bottom 0;
+    }
+    .blue-title-heading {
+        display: flex;
+        justify-content: center;
+        color: #449497;
+        font-weight: normal
+  
+    }
+   
+    
+    p,
+    li {
+      font-family: 'Montserrat Alternates', serif;
+    }
+    h2 {
+      color:#449497;
+      text-decoration: underline; 
+    }
+    .body, code{
+      display:block;
+      margin-block-end: auto;
+      font-size:larger;
+      border-radius: 4px;
+      color: rgb(16, 17, 17);
+      background-color:aquamarine;
+
+    }
+  
+    .right-column> ol {
+      width: 475px;
+      height: 175px;
+      border: 2px solid rgb(83, 157, 180);
+      box-sizing: border-box;
+      color: #449497;
+      text-decoration: #449497;
+
+      
+    }
+    .right-column> ol {
+      display:flexbox;
+      justify-content: right;
+      align-items:right;
+      margin:auto
+
+    }
+    .container{
+      width: 950px;
+    }
+   
+   
+    .bucles {
+    font-weight: bold;
+    }
+    .for{
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: bold;
+      color:#449497
+      
+    }
+    .while{
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: bold;
+      color:#449497
+    }
+    .do_while{
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: bold;
+      color:#449497
+    }
+   
+    .section-one>img #FruitLoops{
+       float: right;
+    }
+    @media (max-width: 48em) {
+      .style-details {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
+
+      .style-details-text {
+        text-align: center;
+      }
+
+    }
+  
+    
+  </style>
+</head>
+
+<body>
+ <div class="Header-container">
+    <div class="logo">
+      <img src="ImagesM4C8/CEGRLOGO.png" alt="Logo" width="250px" height="100px">
+      <div class="copyright">
+        <h6>© 2024 |CEGR Cristina Egusquiza </h6>
+    </div>
+    <div class="blue-title-heading">
+    <h1>Module 4 - Checkpoint 8</h1>
+      
+    </div>
+    <div class="right-column">
+      <ol>
+          <li><a href="#section-one"name="section-one">¿Que tipo de bucles hay en JS?</a></li>
+            
+          <li><a href="#section-two"name="section-two">¿Cuáles son las diferencias entre const,let y var?</a></li>
+            
+          <li><a href="#section-three"name="section-three">¿Qué es una función de flecha?</a></li>
+           
+          <li><a href="#section-four"name="section-four">¿Qué es la deconstrucción de variables?</a></li>
+
+          <li><a href="#section-five"name="section-five">¿Qué hece el operador de extensión en JS?</a></li>
+
+          <li><a href="#section-six"name="section-six">¿Qué es la programación orientada a objetos?</a></li>
+
+          <li><a href="#section-seven"name="section-seven">¿Qué es una promesa en JS?</a></li>
+
+          <li><a href="#section-eight"name="section-eight">¿Qué hacen async y await por nosotros?</a></li>
+
+     </ol>
+    </div>
+    </div>
+   </div>
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="section-one">
+        <a id="section-one"></a>
+        <h2>1.¿Que tipo de bucles hay en JS?</h2>
+        <p>Un bucle es una estructura de control que permite repetir un bloque de instrucciones. 
+          Vamos, repetir una tarea tantas veces como queramos.En JavaScript, existen varias formas de lograrlo, y una de ellas es el bucle con while.
+          El bucle while es una estructura de control de flujo que ejecuta una sección de código mientras se cumple una determinada condición</p>
+        <img src="ImagesM4C8/photo-fruitLoops.jpeg" alt="FruitLoops" width="350px" height="150px&quot;">
+          <img id="FruitLoops">
+        
+        <p>Los tres tipos más comunes de bucles son:
+            <div class="bucles">
+              <ol>for</ol>	
+              <ol>while</ol>
+              <ol>do while</ol>
+            </div>
+        </p>
+        <p>
+          <div class="for">
+            Bucles con for:
+          </div>
+        </p>
+          <p>
+          La estructura de control for en JavaScript es muy útil para ejecutar una serie de instrucciones un número determinado de veces. 
+          A diferencia de while  que usa una condición para determinar si se ejecuta o no el bloque de código, 
+          for usa un contador que se incrementa en cada iteración hasta que se cumple una condición.
+
+          La sintaxis de <bold>for</bold> es la siguiente:
+
+          </p>
+
+        <code><pre><p></p>
+         for (inicialización; condición; actualización) {
+          // código a ejecutar
+          }
+        </code></pre></p>
+        </p>
+        </div>
+        <p>
+          Importante, fíjate que for tiene tres partes separadas por;
+        </p>
+        <p>
+          La inicialización se realiza antes de que se inicie el bucle y se utiliza para declarar variables y asignar valores iniciales.
+        </p>
+        <p>
+          La condición es una expresión booleana que se evalúa antes de cada iteración del bucle. Si la expresión se evalúa como true, se ejecuta el bloque de código dentro del bucle. 
+          Si la expresión se evalúa como false, el bucle termina
+        </p>
+        <p>
+          La actualización se utiliza para actualizar el valor de la variable de control del bucle después de cada iteración. Normalmente, se incrementa o decrementa el valor de la variable de control del bucle.
+        </p>
+        <p>
+          Ejemplo de uso de for:
+          El siguiente ejemplo muestra cómo se puede usar for para imprimir los números del 1 al 10
+
+        </p>
+        <p><pre><code>
+          for (let number = 1; number <= 10; number++) {
+            console.log(number)
+          }
+          
+        </code></pre></p>
+
+        <p>
+          La inicialización es la declaración de la variable number y la asignación del valor 1.
+          La condición es que mientras number <= 10, se itera el bucle.
+          La actualización es number++ que incrementa el valor de number en 1 después de cada iteración.
+          ¿qué es eso de number++? Te lo explico.
+
+          Incrementando números con ++
+          El operador ++ nos permite incrementar el valor de una variable número en 1. Por ejemplo, si tenemos la variable i con el valor 5, i++ incrementaría el valor de i en 1, es decir, i pasaría a valer 6.
+
+        </p>
+
+        <p><pre><code>
+          let i = 5
+          i++
+          console.log(i) // -> 6
+           
+        </code></pre></p>
+        <p>
+          Es una forma abreviada de escribir i = i + 1. Y, como ves, es la forma más típica de usar en bucles como for para no tener que escribir i = i + 1 cada vez.
+        </p>
+        <p>
+          Iterando al revés:
+        </p>
+
+        <p>
+          El método for en JavaScript también se puede utilizar para iterar al revés Para ello, se utiliza la sintaxis i-- en la sección de actualización del bucle en lugar de i++.
+        </p>
+        <p>
+          La sintaxis del método for para iterar en reversa es la siguiente:
+        </p>
+        <p><pre><code>
+          for (let i = 10; i >= 0; i--) {
+            if (i === 0) {
+              console.log('¡Despegue!')
+            } else {
+              console.log('Faltan ' + i + ' segundos')
+            }
+          }
+          
+        </code></pre></p>
+        <p>
+          Aunque siempre los ejemplos con for son los mismos, ten en cuenta que puedes hacer cualquier cosa en la inicialización, condición y actualización. Podrías, por ejemplo, usar dos variables a la vez.
+        </p>
+
+        <code><pre><p>
+          for (let i = 0, j = 5; i < 5; i++, j--) {
+            console.log(i, j);
+          }
+        </code></pre></p>
+
+
+        <p>La coma , nos permite declarar dos variables en la inicialización y actualizarlas en la actualización. En este caso la , es un operador que evalua cada uno de sus operandos (de izquierda a derecha) y retorna el valor del último operando.</p>
+
+        <p>No es muy común su uso, pero es bueno saber que existe.</p>
+
+        <p>continue y break:<p>
+        <p>Al igual que en while, for también tiene las palabras reservadas continue y break para controlar el flujo de ejecución del bucle.</p>
+
+        <p>Recuerda que continue se usa para saltar a la siguiente iteración del bucle y break para salir del bucle.</p>
+
+        <p>Ejemplo:</p>
+        <code><pre><p>
+        for (let i = 0; i < 10; i++) {
+        const esPar = i % 2 === 0
+        if (esPar) {
+        continue
+         }
+
+        // Solo mostramos este consola.log si es impar
+         console.log(i)
+
+        // Salimos del bucle al llegar al 7
+        if (i === 7) {
+         break
+              }
+          }
+        </code></pre></p>
+
+        <p>Bucles anidados con for:</p>
+        <p>Imagina que quieres crear la tabla de multiplicar del 1 al 10. Para ello, necesitas un bucle que itere del 1 al 10 y, dentro de ese bucle, otro bucle que itere del 1 al 10. Esto se puede hacer con dos bucles for anidados (uno dentro del otro).</p>
+        <code><pre><p>
+        for (let i = 1; i <= 10; i++) {
+        for (let j = 1; j <= 10; j++) {
+        const resultado = i * j
+        console.log(i + ' x ' + j + ' = ' + resultado)
+          }
+        }
+        </code></pre></p>     
+      
+        <div class="while">Bucles con while:</div>
+        <p>El bucle while en JavaScript y cómo podemos utilizarlo en nuestros programas.</p>
+
+        <p>Sintaxis:
+        La sintaxis del bucle while es similar a la de un condicional if. 
+        La única diferencia es que, en lugar de ejecutar el código una sola vez, se ejecuta mientras se cumpla la condición</p>
+
+        <code><pre><p>
+        while (condición) {
+          // código a ejecutar mientras se cumpla la condición
+        }
+        </code></pre></p>
+        <p>El bucle comienza evaluando la condición dentro de los paréntesis. Si la condición es true, se ejecuta el código dentro de las llaves.</p>
+
+        <p>Después de ejecutar el código, la condición se evalúa de nuevo, y si sigue siendo verdadera, el código dentro de las llaves se ejecuta de nuevo. Este proceso se repite hasta que la condición se evalúa como falsa.</p>
+
+        <p>Ten en cuenta que, si la condición es falsa desde el principio, el código dentro de las llaves nunca se ejecutará.</p>
+
+
+        <p>A cada vuelta del bucle se le llama iteración. Una iteración es la repetición de un proceso o acción un número determinado de veces, de manera ordenada y sistemática.</p>
+
+
+        <p>Vamos a crear la cuenta atrás de un cohete. Creamos una variable cuentaAtras que contenga el número de segundos que faltan para el lanzamiento. En este caso, vamos a empezar con 10 segundos. .</p>
+        <code><pre><p>
+        let cuentaAtras = 10
+        //Para quitarle un segundo a la cuenta atrás
+        //y vamos a utilizar el operador de resta (-) y el operador de asignación (=).
+
+        let cuentaAtras = 10
+        cuentaAtras = cuentaAtras - 1
+        console.log(cuentaAtras) // -> 9
+        </code></pre></p>
+
+
+
+        <p>Sabiendo esto y cómo funciona el bucle while, podemos crear la cuenta atrás del cohete.</p>
+        <code><pre><p>
+        // iniciamos la variable fuera del bucle
+        let cuentaAtras = 10
+
+        // mientras la cuenta atrás sea mayor que 0
+        while (cuentaAtras > 0) {
+          // mostramos el valor de la cuenta atrás en cada iteración
+          console.log(cuentaAtras)
+          // restamos 1 a la cuenta atrás
+          cuentaAtras = cuentaAtras - 1
+        }
+
+        console.log('¡Despegue!')
+
+        //Si ejecutas este código en consola, deberías ver los números del 10 al 1, 
+        //y después el mensaje de despegue.
+
+        </code></pre></p>
+        <p >Cuidado con los bucles infinitos</p>
+        <p>Los bucles while son muy potentes, pero también pueden ser peligrosos. Si la condición nunca se evalúa como falsa, el bucle se ejecutará infinitamente.</p>
+        <code><pre><p>
+        while (true) {
+        console.log('¡Hola hasta el infinito!')
+            }
+        </code></pre></p>
+
+        <p>Los bucles while son muy potentes, pero también pueden ser peligrosos. Si la condición nunca se evalúa como falsa, el bucle se ejecutará infinitamente.</p>
+        <code><pre><p>
+        while (true) {
+          console.log('¡Hola hasta el infinito!')
+        }
+        </code></pre></p>
+
+        <p>Esto evaluará la condición true como verdadera, y ejecutará el código dentro de las llaves una y otra vez.</p>
+
+        <p>Saliendo de un bucle con break</p>
+        <p>Podemos controlar cuándo queremos salir de un bucle utilizando la palabra reservada break. 
+        Cuando el intérprete de JavaScript encuentra la palabra break, sale del bucle y continúa ejecutando el código que haya después.</p>
+        <code><pre><p>
+        let cuentaAtras = 10
+
+        while (cuentaAtras > 0) {
+          console.log(cuentaAtras)
+          cuentaAtras = cuentaAtras - 1
+
+          // si la cuenta atrás es 5, salimos del bucle
+          if (cuentaAtras === 5) {
+            break // <---- salimos del bucle
+          }
+        }
+        </code></pre></p>
+
+        <p>¿Cuál es el valor de cuentaAtras en este código? Veamos, el bucle estaba haciendo una cuenta atrás... pero le hemos dicho que cuando tuviese el valor 5 saliese del bucle. Por lo tanto, el valor de cuentaAtras es 5.
+
+        Usar break puede ser útil en bucles si queremos salir de ellos por alguna condición en concreto o para evitar justamente los bucles infinitos.</p>
+
+        <P>Saltando una iteración con continue:
+        Igual que tenemos la posibilidad de "romper" el bucle con break, también podemos saltarnos una iteración con continue. Cuando el intérprete de JavaScript encuentra la palabra continue, salta a la siguiente iteración del bucle.</p>
+        <code><pre><p>
+        let cuentaAtras = 10
+
+        while (cuentaAtras > 0) {
+          cuentaAtras = cuentaAtras - 1
+
+          // si la cuenta atrás es un número par...
+          if (cuentaAtras % 2 === 0) {
+            continue // <---- saltamos a la siguiente iteración
+          }
+
+          console.log(cuentaAtras)
+        }
+        </code></pre></p>
+  
+        <p>¿Qué aparece en la salida de la consola? El bucle está haciendo una cuenta atrás... 
+          pero le hemos dicho que si el número es par, se salte esa iteración y deje de ejecutar el código que le sigue.</p>
+
+        <p>Por ello, los números pares no aparecen en la consola.</p>
+        
+        <p>Anidación de bucles.</p>
+        <p>Podemos anidar bucles dentro de otros bucles. Imagina que en nuestra cuenta atrás para el cohete, 
+          tenemos que revisar que 3 cosas están en sus parámetros: el oxígeno, el combustible y la temperatura.</p>
+        <code><pre><p>
+        const NUMERO_REVISIONES = 3
+        let cuentaAtras = 10
+        
+        // mientras la cuenta atrás sea mayor que 0
+        while (cuentaAtras > 0) {
+          // mostramos el valor de la cuenta atrás
+          console.log(cuentaAtras)
+        
+          // creamos una variable para contar las revisiones realizadas
+          // y la inicializamos a cero
+          let revisionesRealizadas = 0
+        
+          // hasta que no hayamos realizado las 3 revisiones...
+
+          while (revisionesRealizadas < NUMERO_REVISIONES) {
+            // y sumamos 1 a las revisiones realizadas
+            //revisionesRealizadas = revisionesRealizadas + 1
+
+            console.log(revisionesRealizadas + ' revisiones realizadas...')
+          }
+        
+          // ahora podemos restar 1 a la cuenta atrás
+          cuentaAtras = cuentaAtras - 1
+        }
+        </code></pre></p>
+        
+        <p>¿Por qué la constante la hemos puesto toda en mayúsculas? Como ya explicamos en la clase de introducción a JavaScript, es una convención para indicar que es una constante y que no va a cambiar.</p>
+        
+        <p>Además del bucle anidado, hay algo también muy interesante en el código anterior y es la creación de la variable let revisionesRealizadas.</p>
+        
+        <p>Ten en cuenta que esa variable se creará y se inicializará a 0 en cada iteración del bucle.</p>
+        
+        <p>Las variables creadas con let y const que se crean dentro de un bucle, solo existen dentro de ese bucle. Cuando el bucle termina, la variable desaparece. De hecho si intentas acceder a ella fuera del bucle, te dará un error.</p>
+        <code><pre><p>
+        let cuentaAtras = 10
+        
+        while (cuentaAtras > 0) {
+          let revisionesRealizadas = 3
+          console.log(revisionesRealizadas)
+          cuentaAtras = cuentaAtras - 1
+        }
+        
+        console.log(revisionesRealizadas) // -> ERROR: ReferenceError
+        
+        </code></pre><p>
+        
+        <p>Esto también pasa con otras estructuras de control. Eso es porque el alcance de las variables creadas con let y const es el bloque entre {} en el que se crean. Lo iremos viendo más adelante para que vayas practicando, no te preocupes.<p>
+        
+        <div class = "do_while">Bucles con do while</div>
+        
+        
+        <p>El bucle  do...while está cercanamente relacionado al bucle while . En el bucle  do...while , la condición se evalúa al final.</p>
+
+        <p>Aquí la sintaxis para el bucle do...while:</p>
+
+        <p>Sintaxis:</p>
+        <code><pre><p>
+         do {
+
+        *Sentencias;*
+
+          } while (*condicion*);
+        </code></pre></p>
+
+        <p>sentencia(s): Una sentencia es ejecutada por lo menos una vez antes de que la condición o expresión booleana sea evaluada y es re-ejecutada cada vez que la condición devuelve true.</p>
+
+        <p>condición: Aquí la condición es una expresión booleana. Si la expresión booleana evalúa a true, las sentencias son ejecutadas de nuevo. Cuando la expresión booleana devuelve false, el bucle finaliza.</p>
+
+        <p>Ejemplo:<z/p>
+        <code><pre><p>
+
+        var i = 0;
+        do {
+         i = i + 1;
+        console.log(i);
+        } while (i < 5);
+
+        //Resultado:
+        1
+        2
+        3
+        4
+        5
+        </code></pre></p>
+
+        <p>Como iterar con bucles Do...While en Javascript.</p>
+        <p>Los bucles Do...While aseguran que el código se ejecute por lo menos una vez, y luego de esta primera ejecución, si la condición dentro del while() es true, continúa con el bucle, de otra forma, se detiene.</p>
+        Solución:
+        <code><pre><p>
+
+        var miArray = [];
+        var i = 10;
+
+        do {
+          miArray.push(i);
+          i++;
+        } while(i <= 10);
+
+        </code></pre></p>
+      </div>
+      <div class="section-two">
+          <a id="section-two"></a>
+          <h2>2.¿Cuáles son las diferencias entre const, let y var?</h2>
+          <p>Con ES2015 (ES6) aparecieron muchas caracter&iacute;sticas nuevas y llamativas. Ahora, desde el a&ntilde;o 2020, se supone que muchos desarrolladores de JavaScript se han familiarizado con estas caracter&iacute;sticas y han empezado a utilizarlas.</p>
+          
+          <p>Una de las caracter&iacute;sticas que llegaron con ES6 es la adici&oacute;n de let y const, que se pueden utilizar para la declaraci&oacute;n de variables. La pregunta es, &iquest;qu&eacute; las hace diferentes del viejo var que hemos venido utilizando?</p>
+         
+          <p>Hablaremos de var, let y const&nbsp; con respecto a su &aacute;mbito (alcance), uso y hoisting. A medida que leas, toma nota de las diferencias entre ellos que se&ntilde;alar&eacute;.</p>
+       
+          <p><strong>Var</strong></p>
+          <p>Antes de la llegada de ES6, las declaraciones var eran las que mandaban. Sin embargo, hay problemas asociados a las variables declaradas con var. Por eso fue necesario que surgieran nuevas formas de declarar variables. En primer lugar, vamos a entender m&aacute;s sobre var antes de discutir esos problemas.</p>
+       
+          <p>&Aacute;mbito de var</p>
+          <p>El &aacute;mbito, significa esencialmente d&oacute;nde est&aacute;n disponibles estas variables para su uso. Las declaraciones var tienen un &aacute;mbito global o un &aacute;mbito de funci&oacute;n/local.</p>
+        
+          <p>El &aacute;mbito es global cuando una variable var se declara fuera de una funci&oacute;n. Esto significa que cualquier variable que se declare con var fuera de una funci&oacute;n est&aacute; disponible para su uso en toda la pantalla.</p>
+         
+          <p>var tiene un &aacute;mbito local cuando se declara dentro de una funci&oacute;n. Esto significa que est&aacute; disponible y solo se puede acceder a ella dentro de esa funci&oacute;n.</p>
+          <p>Para entenderlo mejor, mira el siguiente ejemplo.</p>
+          <code><pre><p>
+            var saludar = "hey, hola";
+    
+            function nuevaFuncion() {
+                var hola = "hola";
+            }
+        
+          </code></pre></p>
+          <p>
+            Aquí, saludar tiene un ámbito global porque existe fuera de la función mientras que hola tiene un ámbito local. Así que no podemos acceder a la variable hola fuera de la función. Así que si realizamos esto:
+          </p>
+          <code><pre><p>
+            var tester = "hey, hola";
+            
+            function nuevaFuncion() {
+                var hola = "hola";
+            }
+            console.log(hola); // error: hola is not defined
+          </code></pre></p>
+        
+          <p>Obtendremos un error que se debe a que hola no est&aacute; disponible fuera de la funci&oacute;n.</p>
+         
+          <p>Las variables con var se pueden volver a declarar y modificar</p>
+          <p>Esto significa que podemos hacer esto dentro del mismo &aacute;mbito y no obtendremos un error.</p>
+          <code><pre><p></p>
+            var saludar = "hey, hola";
+            var saludar = "dice Hola también"
+            var saludar = "hey, hola";
+            saludar = "dice Hola también";
+        
+          </code></pre></p> 
+          <p>Las variables con var se pueden volver a declarar y modificar</p>
+          <p>Esto significa que podemos hacer esto dentro del mismo ámbito y no obtendremos un error.</p>
+          <code><pre><p>
+          var saludar = "hey, hola";
+          var saludar = "dice Hola también"
+          var saludar = "hey, hola";
+          var saludar = "dice Hola también";
+          </code></pre></p>
+
+
+          <p>Hoisting de var</p>
+          <p>Hoisting es un mecanismo de JavaScript en el que las variables y declaraciones de funciones se mueven a la parte superior de su &aacute;mbito antes de la ejecuci&oacute;n del c&oacute;digo. Esto significa que si hacemos esto:</p>
+          <code><pre><p>
+            console.log (saludar);
+            var saludar = "dice hola"
+        </code></pre></p>
+        
+        <p>se interpreta así:</p>
+        
+        <code><pre><p>
+        
+            var saludar;
+            console.log(saludar); // saludar is undefined
+            saludar = "dice hola"
+        </code></pre></p>
+        
+        <p>Entonces las variables con var se elevan a la parte superior de su ámbito y se inicializan con un valor de undefined.</p>
+        
+        <p>Problema con var:Hay una debilidad que viene con  var. Usaré el ejemplo de abajo para explicarlo:</p>
+        
+        <code><pre><p>
+        
+            var saludar = "hey, hola";
+            var tiempos = 4;
+        
+            if (tiempos > 3) {
+                var saludar = "dice Hola también"; 
+            }
+            console.log(saludar) // "dice Hola también"
+        </code></pre></p>
+        
+        <p>Por lo tanto, como tiempos > 3 devuelve true, saludar se redefine para "dice Hola también". Aunque esto no es un problema si quieres redefinir saludar a conciencia, se convierte en un problema cuando no te das cuenta de que la variable saludar ha sido definida antes.</p>
+        
+        <p>Si has utilizado saludar en otras partes de tu código, puede que te sorprenda la salida que puedes obtener. Esto probablemente causará muchos errores en tu código. Por eso son necesarios let y const.</p>
+        
+        <p><strong>let</strong></p>
+        <p>let es ahora preferible para la declaración de variables. No es una sorpresa, ya que es una mejora de las declaraciones con var. También resuelve el problema con var que acabamos de cubrir. Consideremos por qué esto es así.</p>
+        
+        <p>let tiene un ámbito de bloque</p>
+        <p>Un bloque es un trozo de código delimitado por {}. Un bloque vive entre llaves. Todo lo que está dentro de llaves es un bloque.</p>
+        
+        <p>Así que una variable declarada en un bloque con let  solo está disponible para su uso dentro de ese bloque. Permíteme explicar esto con un ejemplo:</p>
+        <code><pre><p>
+           let saludar = "dice Hola";
+           let tiempos = 4;
+        
+           if (tiempos > 3) {
+                let hola = "dice Hola tambien";
+                console.log(hola);// "dice Hola tambien"
+            }
+           console.log(hola) // hola is not defined
+        </code></pre></p>
+        <p>Vemos que el uso de hola fuera de su bloque (las llaves donde se definió) devuelve un error. Esto se debe a que las variables let tienen un alcance de bloque.<p>
+        
+        <p>let puede modificarse pero no volver a declararse.</p>
+        <p>Al igual que var,  una variable declarada con let puede ser actualizada dentro de su ámbito. A diferencia de var, una variable let no puede ser re-declarada dentro de su ámbito. Así que mientras esto funciona:</p>
+        <code><pre><p>
+            let saludar = "dice Hola";
+            saludar = "dice Hola tambien";
+        //esto devolverá un error:
+        </code></pre></p>
+        <code><pre><p>
+            let saludar = "dice Hola";
+            let saludar = "dice Hola tambien";
+         // error: Identifier 'saludar' has already been declared
+        </code></pre></p>
+        <p>Sin embargo, si la misma variable se define en diferentes ámbitos, no habrá ningún error:</p>
+        <code><pre><p>
+            let saludar = "dice Hola";
+            if (true) {
+                let saludar = "dice Hola tambien";
+                console.log(saludar); // "dice Hola tambien"
+            }
+            console.log(saludar); // "dice Hola"
+        </code></pre></p>
+        
+        <p>¿Por qué no hay ningún error? Esto se debe a que ambas instancias son tratadas como variables diferentes, ya que tienen ámbitos diferentes.</p>
+        
+        <p>Este hecho hace que let sea una mejor opción que var. Cuando se utiliza let, no hay que preocuparse de sí se ha utilizado un nombre para una variable antes, puesto que una variable solo existe dentro de su ámbito.</p>
+        
+        <p>Además, como una variable no puede ser declarada más de una vez dentro de un ámbito, entonces el problema discutido anteriormente que ocurre con var no sucede.</p>
+        
+        <p>Hoisting de let</p>
+        <p>Al igual que  var, las declaraciones let se elevan a la parte superior. A diferencia de var que se inicializa como undefined, la palabra clave let no se inicializa. Sí que si intentas usar una variable let antes de declararla, obtendrás un Reference Error.</>
+        
+        
+        
+        <p><strong>const</strong></p>
+        <p>Las variables declaradas con const mantienen valores constantes. Las declaraciones const similitudes con las declaraciones let.</p>
+        
+        <p>Las declaraciones const tienen un ámbito de bloque</p>
+        <p>Al igual que las declaraciones let, solamente se puede acceder a las declaraciones const dentro del bloque en el que fueron declaradas.</p>
+        
+        <p>const no puede modificarse ni volver a declararse</p>
+        <p>Esto significa que el valor de una variable declarada con const s el mismo dentro de su ámbito. No se puede actualizar ni volver a declarar. Así que, si declaramos una variable con const, no podemos hacer esto:</p>
+        <code><pre><p>
+            const saludar = "dice Hola";
+            saludar = "dice Hola también";
+        // error: Assignment to constant variable. 
+        </code></pre></p>
+        
+        <p>ni esto:</p>
+        
+        <code><pre><p>
+            const saludar = "dice Hola";
+            const saludar = "dice Hola también";
+        // error: Identifier 'saludar' has already been declared
+        </code></pre></p>
+        
+        <p>Por lo tanto, toda declaración const, debe ser inicializada en el momento de la declaración. </p>
+        
+        <p>Este comportamiento es algo diferente cuando se trata de objetos declarados con const. Mientras que un objeto const no se puede actualizar, las propiedades de este objeto sí se pueden actualizar. Como resultado, si declaramos un objeto const como este:</p>
+        <code><pre><p>
+            const saludar = {
+                mensaje: "dice Hola",
+                tiempos: 4
+            }
+        </code></pre></p>
+        
+        <p>mientras que no podemos hacer esto:</p>
+        <code><pre><p>
+        
+            saludar = {
+                palabras: "Hola",
+                numero: "cinco"
+            }
+         // error:  Assignment to constant variable.
+        </code></pre></p>
+        
+        <p>podemos hacer esto</p>
+        <code><pre><p>
+        
+            saludar.mensaje = "dice Hola tambien";
+        </code></pre></p>
+        
+        
+        <p>Esto actualizará el valor de saludar.mensaje sin devolver errores.</p>
+        
+        <p>Hoisting de const</p>
+        <p>Al igual que let, const las declaraciones const se elevan a la parte superior, pero no se inicializan. </p>
+        
+        <p>En resumen:</p>
+        <p>
+          <ol>
+              <li>Las declaraciones var tienen un ámbito global o un ámbito función/local, mientras que let y const tienen un ámbito de bloque.</li>
+              <li>Las variables var pueden ser modificadas y re-declaradas dentro de su ámbito; las variables let pueden ser modificadas, pero no re-declaradas; las variables const no pueden ser modificadas ni re-declaradas.</li>
+              <li>Todas ellas se elevan a la parte superior de su ámbito. Pero mientras que las variables var se inicializan con undefined, let y const no se inicializan.</li>
+              <li>Mientras que var y let pueden ser declaradas sin ser inicializadas, const debe ser inicializada durante la declaración.</li>
+          </ol>
+        </p>
+        
+      </div>
+                
+      <div class="section-three">
+        <a id="section-three"></a>
+        <h2>3.¿Qué es una función de flecha?</h2>
+        <p>Las funciones flecha son una forma más concisa de crear funciones en JavaScript, y se han vuelto muy populares en los últimos años debido a su sintaxis simplificada.</p>
+
+          <p>La sintaxis básica de una función flecha es la siguiente:</p>
+          <code><pre><p>
+          const miFuncionFlecha = () => {
+            // código a ejecutar
+          }
+          </code></pre></p>
+          <p>Las funciones flecha son siempre funciones anónimas y “function expressions”. Esto significa que no tienen nombre y que se asignan a una variable.</p>
+
+          <p>En lugar de la palabra clave” function”, utilizamos una flecha => para definir la función. También podemos omitir los paréntesis alrededor de los parámetros si solo tenemos uno:</p>
+          <code><pre><p>
+          const saludar = nombre => {
+            console.log("Hola " + nombre)
+          }
+          </code></pre></p>
+          <p>Ventajas de las funciones flecha sobre las funciones regulares en JS:</p>
+
+          <p>
+            <ol>
+              <li>Sintaxis más concisa: la sintaxis de las funciones flecha es más corta y más fácil de leer que la sintaxis de las funciones regulares, 
+                  especialmente cuando se trabaja con funciones de una sola línea.</li>
+
+              <li>Return implícito: las funciones flecha puede devolver el valor de la expresión sin usar la palabra clave return cuando son de una sola línea. 
+                  Esto hace que las funciones flecha sean aún más cortas y más fáciles de leer.</li>
+
+              <li>Funciones anónimas más legibles: las funciones flecha son una forma más legible y concisa de crear funciones anónimas en JavaScript, 
+                  lo cual puede hacer que nuestro código sea más fácil de entender.</li>
+
+              <li>Return implícito: Cuando una función flecha tiene una sola expresión, podemos omitir las llaves {} y la palabra clave return para hacerla aún más corta. 
+                  Esto se conoce como return implícito.</li>
+            </ol>
+          </p>
+
+          <p> Vamos a pasar una función regular a una función flecha y vamos a ver cómo se ve finalmente con return implícito:</p>
+          <code><pre><p>
+          // Declaración de función regular
+          function sumar(a, b) {
+            return a + b
+          }
+          // Función flecha
+          const sumarFlecha = (a, b) => {
+            return a + b
+          }
+
+          // Función flecha con return implícito
+          const sumarFlecha = (a, b) => a + b
+
+          </code></pre></p>
+
+          <p>Como podemos ver, la función flecha con return implícito es mucho más corta y fácil de leer que la función regular. Esto es especialmente útil cuando estamos trabajando con funciones de una sola línea.</p>
+
+      </div>
+      <div class="section-four">
+        <a id="section-four"></a>
+        <h2>4.¿Qué es la deconstrucción de variables?</h2>
+        <p>Es una expresión de JavaScript que permite desempacar valores de arreglos o propiedades de objetos en distintas variables. Es decir, podemos extraer datos de arreglos y objectos y asignarlos a variables.
+          La capacidad para intercambiar valores de las variables</p>
+        <p>Con ayuda de las variables temporales, podemos intercambiar los valores de dos variables para crear el método swap en JavaScript. Esto puede ser muy útil cuando queremos crear alternancia en JavaScript. A continuación, te ponemos un ejemplo:</p>
+          
+        <p>Pensemos que estamos creando una liga en la que los partidos tienen un equipo que juega como visitante (away) y otro que juega como local (home). Como en una liga normalmente hay dos enfrentamientos, habrá uno en el que deberemos programar un intercambio de variables para así hacer que ambos tengan ventaja en cada partido.</p>
+          
+        <p>Las variables temporales funcionan, como su nombre indica, como una variable intermedia que crea un paso temporal de un valor entre dos variables. Es decir, intercambian los valores. A continuación, puedes ver un ejemplo de este intercambio con las variables home y away:</p>
+        <code><pre><p>
+          firstMatch {home: ‘D’, away: F’} => firstMatch{home: ‘F’, away: ‘D’}
+        </code></pre></p>
+        <p>El primer paso para intercambiar los valores de las variables home y away será crear una variable temporal que se iguale a una de las variables dentro del objeto firstMatc:</p>
+        <code><pre><p>
+          const temp = firstMatch.home;
+        </code></pre></p>
+        <p>Al crear esta línea de código, estamos diciendo que la variable temp es igual a ‘D’. Ahora, haremos que esta variable se iguale a la otra:</p>
+          
+        <code><pre><p>
+          
+        firstMatch.home = firstMatch.away
+        </code></pre></p>
+        <p>Con esta línea de código hemos hecho que el valor de la variable home dentro del objeto firstMatch pasa a ser el valor de la variable away. Sin embargo, todavía no hemos alterado el valor de away. Por lo que hemos creado el siguiente objeto:</p>
+          
+        <code><pre><p>
+              
+        firstMatch.away = temp;
+          
+        </code></pre></p>
+        <p>Con esto, lo que estamos haciendo es asignarle a la variable away del objeto firstMatch el valor de la variable temp. Como hemos visto antes, este valor ahora es ‘D’. Entonces, el resultado será el siguiente objeto:</p>
+        <code><pre><p>
+          
+        firstMatch{home: ‘F’, away: ‘D’}
+          
+        </code></pre></p>
+          
+        <p>Otros ejemplo:</p>
+          
+        <p>Dentro de la siguiente función(function roadRage) intercambiamos los valores de (rightLane) y( leftLane)</p>
+          
+          
+        <code><pre><p>
+          
+          Function roadRage() {
+          
+            let rightLane=”Chevy”;
+            let leftLane=”Honda”;
+          
+          [rightLane,leftLane] =[leftLane,rightLane];
+             Return(`that ${rightLane} and ${leftLane} won’t pick a lane`):
+            }
+          
+            roadRage();
+        </code></pre></p>
+          
+      </div>
+      <div class="section-five">
+        <a id="section-five"></a>
+        <h2>5.¿Qué hace el operador de extensión en JS?</h2>
+        <p>El operador de extensión en inglés denominado “spread operator” permite a un elemento iterable tal como un arreglo o cadena ser expandido en lugares donde cero o más argumentos (para llamadas de función) o elementos (para Array literales) son esperados, o a un objeto ser expandido en lugares donde cero o más pares de valores clave (para literales Tipo Objeto) son esperados.</p>
+
+        <p>Estos son los tres tipos de sintaxis para los que se utiliza:</p>
+
+        <p>Si declaramos un array y lo imprimimos, este se verá como tal (un array):</p>
+        <code><pre><p>
+        let shoppingCart= [345, 375, 765, 123];
+        console.log(shoppingCart);
+        //?
+        [345, 375, 765, 123]
+        //Si aplicamos el “spread operator” al imprimir, obtendremos cada valor por separado:
+        Console.log(...shoppingCart);
+        //?
+        345, 375, 765, 123
+        </code></pre></p>
+
+        <p>¿Cuánto usarlo? A continuación, unos ejemplos.</p>
+        <p>Ejemplo 1</p>
+        <code><pre><p>
+        //Enviar elementos en un array a una función
+        let shoppingCart= [345, 375, 765, 123];
+        let newItems= [98, 123];
+        console.log.push(newItems);
+        console.log(shoppingCart);
+        //?
+        [345, 375, 765, 123[98, 123]]
+        </code></pre></p>
+
+        <p>En este primer caso hemos enviado elementos de un array en otro array</p>
+        Pero si utilizamos el “spread operator” el resultado seria:
+        <code><pre><p>
+        //Añadir un array a otro array
+        let shoppingCart= [345, 375, 765, 123];
+        let newItems= [98, 123]
+        console.log.push(…newItems);
+        console.log(shoppingCart);
+        //?
+        [345, 375, 765, 123, 98, 123]
+        </code></pre></p>
+
+        <p>Ejemplo 2</p>
+        <code><pre>
+        // Utilizar “spread operator” para copiar Arrays dentro de una función
+        const shoppingCart= [345, 375, 765, 123];
+        const updatedCart=shoppingCart.slice();
+        updatedCart..push(5);
+
+        console.log(updatedCart);
+        console.log(shoppingCart);
+        //?
+        [345, 375, 765, 123, 5]
+        [345, 375, 765, 123 ]
+        </code></pre></p>
+        En este caso hemos utilizado slice(), pero si utilizamos el “spread operator” …() el resultado será el mismo. En JavaScript se pueden usar estos dos métodos.
+        <code><pre><p>
+
+        const shoppingCart= [345, 375, 765, 123];
+        const updatedCart=[…shoppingChart];
+        updatedCart..push(5);
+
+        console.log(updatedCart);
+        console.log(shoppingCart);
+        //?[345, 375, 765, 123, 5]
+        //?[345, 375, 765, 123, ]
+        </code></pre></p>
+
+
+        <p>Ejemplo 3</p>
+
+        Utilizar “spread operator” con un argumento de funciónes utilizando librerías [math](esto solo esta disponible en JavaScript)
+
+        <p>Usar con argumentos de funciones y este es un patrón muy común que verá en las aplicaciones y usaremos la biblioteca matemática como ejemplo. Entonces voy a decir matemáticas y esto solo está disponible en todo JavaScript. Voy a decir Math.max(); y la forma en que funciona el argumento max es pasar una lista de argumentos. Entonces puedo decir 1, 5, 1, 10, 2 y 3. Y lo que esto hará es generar cualquier valor superior. Entonces puedo decir registro de consola y luego concluir todo esto y luego se imprimirá en este caso 10. Entonces presione guardar y ejecutar y podrá ver que 10 es el resultado.</p>
+
+        <p>Ahora bien, si tuviera una gran colección de valores, digamos que tuviera varios elementos de ingresos o algo así y quisiera ver cuál era el más alto, entonces podría pensar que podría hacer algo como esto y voy a poner esto justo arriba. Diré const orderTotals y pondré exactamente esta misma colección dentro de y así tendremos una matriz de estos orderTotals y queremos ver cuál era el más grande.</p>
+
+        <p>Puede pensar que podría simplemente pasar esto directamente a Math.max y si lo guardo y lo ejecuto, no obtendremos un número (NaN).</p>
+
+        <p>Agregando el operador de extensión a esta matriz. Entonces, al pasar eso justo en frente de orderTotals, lo que hace javascript ahora es tomar todo lo que está dentro de la colección, lo distribuye y los convierte en su propio conjunto de elementos, por lo que ya no pasamos un único argumento de función a nuestro método max. Pero ahora estamos pasando seis números enteros tal como lo hicimos al principio. Así es como se puede utilizar el operador de extensión para trabajar con argumentos de función y verá que es una forma muy popular de hacerlo en muchos de los marcos modernos.</p>
+
+
+
+        <code><pre><p>
+
+        const orderTotals = [1, 5, 1, 10, 2, 3];
+        console.log(Math.max(...orderTotals));
+
+        // [1, 5, 1, 10, 2, 3]
+        // ...[1, 5, 1, 10, 2, 3]
+        // 1, 5, 1, 10, 2, 3
+        </code></pre></p>
+
+
+        <p>Ejemplo 4</p>
+
+        <p>Cómo podemos utilizar el operador de extensión para poder trabajar con la deconstrucción de objetos. Así que voy a crear un objeto aquí y voy a decir constante y luego dentro del objeto habrá una alineación de béisbol, así que diré que el que empieza es Verlander y luego el que cierra será Giles y luego tenemos que enumerar un número variable de lanzadores de relevo(relievers). Entonces vamos a tener al lanzador de relevo uno, que será Morton y luego al lanzador de relevo dos, será Gregerson.</p>
+
+        <code><pre><p>
+
+        const {} = {
+          starter: 'Verlander',
+          closer: 'Giles',
+          relief_1: 'Morton',
+          relief_2: 'Gregerson'
+        }
+        </code></pre></p>
+
+
+        <p>Si paso un valor como este, como iniciador, será un mapa de las claves y lo mismo con el cerrador, entonces, ¿cómo podemos obtener este conjunto de relevistas cuando no conocemos el conjunto completo de nombres ni nada por el estilo? ¿eso? Bueno, podemos usar nuestro operador de propagación. Puedo agregar una coma los tres puntos... y luego relevistas “relievers”</p>
+
+        <code><pre><p>
+
+        const { starter, closer, ...relievers } = {
+          starter: 'Verlander',
+          closer: 'Giles',
+          relief_1: 'Morton',
+          relief_2: 'Gregerson'
+        }
+        console.log(starter);
+        console.log(closer);
+        console.log(relievers);
+
+        ?//
+        //"Verlander"
+        //"Giles"
+        //Object {
+        //  relief_1: "Morton",
+        //  relief_2: "Gregerson"
+        //}
+        </code></pre></p>
+
+      </div>
+      <div class="section-six">
+        <a id="section-six"></a>
+        <h2>6.¿Qué es la programación orientada a objetos?</h2>
+        <p>Durante años, las versiones anteriores de JavaScript no tenían los componentes de clases y creación de instancias de programación orientada a objetos y eso estuvo bien por un período de tiempo. Pero las versiones más modernas de JavaScript han implementado clases.</p>
+
+        <p>Para explicar la POO , tenemos que hablar sobre las clases y la creación de instancias, una de las cosas más difíciles de entender. </p>
+
+        <p>Explicaremos estos conceptos con un ejemplo de la vida real:</p>
+
+        <img src="ImagesM4C8/plano.jpg" alt="plano" width="350px" height="150px&quot;">
+          <img id="plano">
+
+        <p>Es como cuando hacemos primero un planos para la construcción de una casa, esto seria la representación de una casa , pero todavía no es una casa, en JS el plano es la clase, donde se describe el comportamiento y funcionamiento de la misma y nos lleva al siguiente paso que seria la creación de la instancia , que convertirá la  clase en objeto, esto es básicamente la programación orientada a objetos (POO), en otras herramientas como React y Angular también utilizan la (POO).</p>
+
+        
+        <img src="ImagesM4C8/cas.png" alt="cas" width="350px" height="150px&quot;">
+                <img id="cas">   
+        <p>Ahora pongamos un ejemplo de la técnica de la (POO) en Java Script:
+        Primero crearemos una clase (el plano) y luego instanciaremos( crearemos una instancia de la clase (Instructor), pasaremos (name) como objeto(esto sería como construir la casa).</p>
+
+        <code><pre><p>
+        Class Instructor{
+
+        Constructor ({name}) {
+
+        this.name=name;
+        }
+        }
+        Const Maria  = newInstructor({name: ‘Maria Gomez’});
+        Console.log(maria);
+
+        //?
+
+        Console :Object{
+        Name: “Maria Gomez”
+        }
+
+        //Pero para conseguir un mejor resultado.
+
+        Console.log (maría.name);
+
+
+        //?
+        “María Gomez”
+
+        </code></pre></p>
+
+      </div>
+      <div class="section-seven">
+        <a id="section-seven"></a>
+        <h2>7.¿Qué es una promesa en JS?</h2>
+        <p>Esencialmente, una promesa es un objeto devuelto al cual se adjuntan funciones callback, en lugar de pasar callbacks a una función.</p>
+
+        <p>Considera la función crearArchivoAudioAsync(), la cual genera de manera asíncrona un archivo de sonido de acuerdo a un archivo de configuración, y dos funciones callback, una que es llamada si el archivo de audio es creado satisfactoriamente, y la otra que es llamada si ocurre un error. El código podría verse de la siguiente forma:</p>
+
+        <code><pre><p>
+        function exitoCallback(resultado) {
+          console.log("Archivo de audio disponible en la URL " + resultado);
+        }
+
+        function falloCallback(error) {
+          console.log("Error generando archivo de audio " + error);
+        }
+
+        crearArchivoAudioAsync(audioConfig, exitoCallback, falloCallback);
+
+
+        </code></pre></p>
+
+
+
+        <p>Las funciones modernas devuelven un objeto promise al que puedes adjuntar funciones de retorno (callbacks). Si crearArchivoAudioAsync fuera escrita de manera tal que devuelva un objeto promise, usarla sería tan simple como esto:</p>
+
+        <code><pre><p>
+        crearArchivoAudioAsync(audioConfig).then(exitoCallback, falloCallback);
+        </code></pre></p>
+
+        <p>Lo cual es la versión corta de:</p>
+
+        <code><pre><p>
+        const promesa = crearArchivoAudioAsync(audioConfig);
+        promesa.then(exitoCallback, falloCallback);
+
+        </code></pre></p>
+
+        <p>Llamamos a esto una llamada a función asíncrona. Esta convención tiene varias ventajas.</p>
+
+        <p>Garantías</p>
+        <p>A diferencia de las funciones callback pasadas al "viejo estilo", una promesa viene con algunas garantías:</p>
+        <p>Las funciones callback nunca serán llamadas antes de la terminación de la ejecución actual del bucle de eventos de JavaScript.</p>
+        <p>Las funciones callback añadidas con then() incluso después del éxito o fracaso de la operación asíncrona serán llamadas como se mostró anteriormente.</p>
+        <p>Múltiples funciones callback pueden ser añadidas llamando a then() varias veces. Cada una de ellas es ejecutada una seguida de la otra, en el orden en el que fueron insertadas.</p>
+        <p>Una de las grandes ventajas de usar “promises” es el encadenamiento, explicado a continuación.</p>
+
+        <p>Encadenamiento:</p>
+        <p>Una necesidad común es el ejecutar dos o más operaciones asíncronas seguidas, donde cada operación posterior se inicia cuando la operación previa tiene éxito, con el resultado del paso previo. Logramos esto creando una cadena de objetos promises.</p>
+
+        <p>Aquí está la magia: la función then() devuelve una promesa nueva, diferente de la original:</p>
+        <code><pre><p>
+        const promesa = hazAlgo();
+        const promesa2 = promesa.then(exitoCallback, falloCallback);
+        </code></pre></p>
+        // o bien 
+        <code><pre><p>
+        let promesa2 = hazAlgo().then(exitoCallback, falloCallback);
+        </code></pre></p>
+        <p>Esta segunda promesa (promesa2) representa no sólo la terminación de hazAlgo(), sino también de exitoCallback o falloCallback que pasaste, las cuales pueden ser otras funciones asíncronas devolviendo una promesa. Cuando ese es el caso, cualquier función callback añadida a promesa2 se queda en cola detrás de la promesa devuelta por exitoCallback o falloCallback.</p>
+
+        <p>Básicamente, cada promesa representa la terminación de otro paso (asíncrono o no) en la cadena.</p>
+
+        <zpxEn el pasado, hacer varias operaciones asíncronas en fila conduciría a la clásica pirámide de funciones callback:</p>
+        <code><pre><p>
+        hazAlgo(function(resultado) {
+          hazAlgoMas(resultado, function(nuevoResultado) {
+            hazLaTerceraCosa(nuevoResultado, function(resultadoFinal) {
+              console.log('Obtenido el resultado final: ' + resultadoFinal
+            }, falloCallback);
+          }, falloCallback);
+        }, falloCallback);
+        </code></pre></p>
+        <p>Con las funciones modernas, adjuntamos nuestras functiones callback a las promesas devueltas, formando una cadena de promesa:</p>
+        <code><pre><p>
+        hazAlgo()
+          .then(function (resultado) {
+            return hazAlgoMas(resultado);
+          })
+          .then(function (nuevoResultado) {
+            return hazLaTerceraCosa(nuevoResultado);
+          })
+          .then(function (resultadoFinal) {
+            console.log("Obtenido el resultado final: " + resultadoFinal);
+          })
+          .catch(falloCallback);
+        </code></pre>/<p>
+        <p>Los argumentos a then son opcionales, y catch(falloCallBack) es un atajo para then(null, falloCallBack). Es posible que veas esto expresado con funciones de flecha :</p>
+        <code><pre><p>
+        hazAlgo()
+          .then((resultado) => hazAlgoMas(resultado))
+          .then((nuevoResultado) => hazLaTerceraCosa(nuevoResultado))
+          .then((resultadoFinal) => {
+            console.log(`Obtenido el resultado final: ${resultadoFinal}`);
+          })
+          catch(falloCallback);
+        </code></pre></p>
+        <p>Importante: Devuelve siempre resultados, de otra forma las funciones callback no se encadenarán, y los errores no serán capturados.</p>
+
+        <p>Encadenar después de una captura</p>
+        <p>Es posible encadenar después de un fallo - por ejemplo: un catch- lo que es útil para lograr nuevas acciones incluso después de una acción fallida en la cadena. Lea el siguiente ejemplo:</p>
+        <code><pre><p>
+        new Promise((resolver, rechazar) => {
+          console.log("Inicial");
+
+          resolver();
+        })
+          .then(() => {
+            throw new Error("Algo falló");
+
+            console.log("Haz esto");
+          })
+          .catch(() => {
+            console.log("Haz aquello");
+          })
+          .then(() => {
+            console.log("Haz esto sin que importe lo que sucedió antes");
+          });
+        //Esto devolverá el siguiente texto:
+
+        //Inicial
+        //Haz aquello
+        //Haz esto sin que importe lo que sucedió antes
+        //Note que el texto "Haz esto" no es escrito porque el error "Algo falló" causó un rechazo.
+        </code></pre></p>
+
+        <p>Propagación de errores:</p>
+        <p>Tal vez recuerdes haber visto falloCallback tres veces en la pirámide en un ejemplo anterior, en comparación con sólo una vez al final de la cadena de promesas:</p>
+        <code><pre><p>
+        hazAlgo()
+          .then((resultado) => hazAlgoMas(valor))
+          .then((nuevoResultado) => hazLaTerceraCosa(nuevoResultado))
+          .then((resultadoFinal) =>
+            console.log(`Obtenido el resultado final: ${resultadoFinal}`),
+          )
+          .catch(falloCallback);
+        </code></pre></p>
+        <p>Básicamente, una cadena de promesas se detiene si hay una excepción, y recorre la cadena buscando manejadores de captura. Lo siguiente está mucho más adaptado a la forma de trabajo del código síncrono:</p>
+        <code><pre><p>
+        try {
+          let resultado = syncHazAlgo();
+          let nuevoResultado = syncHazAlgoMas(resultado);
+          let resultadoFinal = syncHazLaTerceraCosa(nuevoResultado);
+          console.log(`Obtenido el resultado final: ${resultadoFinal}`);
+        } catch (error) {
+          falloCallback(error);
+        }
+        </code></pre></p>
+
+        <p>Esta simetría con el código síncrono culmina con la mejora sintáctica async/await en ECMASCript 2017:</p>
+        <code><pre><p>
+        async function foo() {
+          try {
+            let resultado = await hazAlgo();
+            let nuevoResultado = await hazAlgoMas(resultado);
+            let resultadoFinal = await hazLaTerceraCosa(nuevoResultado);
+            console.log(`Obtenido el resultado final: ${resultadoFinal}`);
+          } catch (error) {
+            falloCallback(error);
+          }
+        }
+        </code></pre></p>
+        <p>En resumen:</p>
+        <p>Las promesas resuelven un fallo fundamental de la pirámide de funciones callback, capturando todos los errores, incluso excepciones lanzadas y errores de programación. Esto es esencial para la composición funcional de operaciones asíncronas.</p>
+
+        <p>Entendemos que la naturaleza primera del JavaScript es construir alrededor de la comunicación con servicios externos ya sean bases de datos o cualquier otro servicio fuera de una API .</p>
+
+        <p>Todas las utilidades como React o angular obtinen sus datos de comunicarse con servicios externos API’s y por eso la utilización de una herramienta como (Promises) es la clave para que el proceso sea fluido.</p>
+
+        <p>Es importante entender cómo trabaja (Promises) para ver los tipos de componentes que necesita para funcionar con propiedad.</p>
+
+      </div>
+      <div class="section-eight">
+        <a id="section-eight"></a>
+        <h2>8.¿Qué hacen async y await por nosotros?</h2>
+        <p>Una de las grandes ventajas de trabajar con con JavaScript moderno comparado con otras versiones de JS es el proceso async y await</p>
+
+        <p>Todos los procesos tienen que ir en orden y a su tiempo para que todo funcione, async y await hará que todo esto ocurra.</p>
+
+        <p>Async y await en JS son dos palabras clave que nos permiten transformar un código asíncrono para que parezca ser síncrono. Estas palabras clave son muy utilizadas en el contexto de código realizado con promesas.</p>
+
+
+
+
+
+        <p>Al definir una función como async , podemos usar la palabra clave await antes de cualquier expresión que retorne una promesa. De esta forma, la ejecución de la función externa (la función async ) se pausará hasta que se resuelva la promesa.</p>
+
+        <p>El proceso sería el siguiente.</p>
+
+        <code><pre><p>
+
+        //usuario entra en el sistema 
+        // verifica las credenciales del usuario
+        // devuelve una promesa
+        // pone un tiempo para realizar esta promesa
+        // y dice espera a que esta función termine para empezar la siguiente
+        // si todo funciona, esto dictará como ocurre el proceso
+
+        const login = () => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve('User logged in...');
+            }, 2000);
+          });
+        }
+
+        </code></pre></p>
+
+        <p>Y asegurémonos de que esta parte esté funcionando hasta el momento antes de agregar la cuenta de actualización. Entonces, si lo hubiera ejecutado, esperaría unos dos segundos y luego se imprimiría en la consola. Aquí lo tenemos en el "Usuario que inició sesión..."</p>
+
+        <code><pre><p>
+        async function loginActivities() {
+          const returnedLogin = await login();
+          console.log(returnedLogin);
+        }
+
+        loginActivities():    // "User logged in..."
+
+
+        </code></pre></p>
+        
+      </div>
+      <div class="Fuentes">
+        <h6>@CEGR</h6>
+        <p>
+          Documentación para Checkpoint 8 
+          copyright@CEGR 2024
+        </p>
+      </div>
+  </div>
+  
+</body>
+
+</html>
